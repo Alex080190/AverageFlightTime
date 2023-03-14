@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -45,11 +46,9 @@ public class Main {
         int minutes = average % 60;
         System.out.println("Average flight time is " + hours + " hours and " + minutes + " minutes");
 
-        int average90PercentTime = (int) (average * 0.9);
-        int hours90 = average90PercentTime / 60;
-        int minutes90 = average90PercentTime % 60;
-        System.out.println("90% of the average flight time is " + hours90 + " hours and " + minutes90 + " minutes");
-
+        Collections.sort(flightTimeInMinutes);
+        int Percentiles90 = (int) (flightTimeInMinutes.size() * 0.9);
+        System.out.println("90 Percentiles: " + flightTimeInMinutes.get(Percentiles90 - 1) / 60 + " hours and " + flightTimeInMinutes.get(Percentiles90 - 1) % 60 + " minutes");
 
     }
 }

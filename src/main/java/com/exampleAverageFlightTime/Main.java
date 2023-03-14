@@ -51,4 +51,5 @@ public class Main {
         System.out.println("90 Percentiles: " + flightTimeInMinutes.get(Percentiles90 - 1) / 60 + " hours and " + flightTimeInMinutes.get(Percentiles90 - 1) % 60 + " minutes");
 
     }
+
 }
